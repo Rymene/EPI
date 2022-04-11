@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Varela&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Varela', sans-serif;
+            overflow-x: hidden;
+        }
+
+        footer {
+            background-color: #333333;
+            color: white;
+            padding: 0 20px;
+            position: relative;
+            overflow: unset;
+        }
+
+        header {
+            min-width: 100%;
+            min-height: 10%;
+            background: transparent;
+            position: fixed;
+            transition: all 0.3s ease-out;
+            display: flex;
+            z-index: 5;
+        }
+
+
+        .ddl {
+            margin: 0;
+            padding: 1500px;
+            background: linear-gradient(#7597de, #2b1055)
+        }
+
+
+
+        .btn:hover {
+            background-color: #45668f;
+            transition: .4s linear;
+        }
+
+
+        .item {
+            margin: 0 10px;
+            font-size: 22px;
+        }
+
+        .clickAnim {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(to top, #ff4e50, #f9d423);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            position: absolute;
+            z-index: 9000;
+            transform: scale(0);
+            transform-origin: center;
+            animation: clickAnim 1s ease-in-out;
+        }
+
+        .anim-header {
+            background: #172230;
+            color: #45668f;
+        }
+
+        @keyframes clickAnim {
+            0% {
+                transform: scale(0);
+            }
+
+            50% {
+                transform: scale(2);
+                opacity: 1;
+            }
+
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+        }
+
+        .boutonmenuprincipal {
+            background-color: #99b5cb;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 15px;
+            margin-top: 20px;
+            font-size: 0.8rem;
+            border-radius: 50px;
+            font-family: 'Varela', sans-serif;
+            border-radius: 50px;
+            align-items: center;
+            justify-content: space-between;
+            text-decoration: none;
+        }
+
+        .boutonmenuprincipal:hover {
+            background-color: #3c689e;
+            transition: .4s linear;
+        }
+
+        .dropdown {
+            position: absolute;
+            display: inline-block;
+            left: 600px;
+            top: 27px;
+        }
+
+        .dropdown-child {
+            display: none;
+            background-color: #99b5cbe3;
+            min-width: 50px;
+            border-radius: 20px;
+            margin-top: 9px;
+        }
+
+        .dropdown-child a {
+            color: white;
+            padding: 20px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-child {
+            display: block;
+        }
+
+        .test1:hover {
+            display: block;
+            color: #45668f9d;
+            transition: .4s linear;
+        }
+
+        .histoire {
+            background-color: #99b5cb;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 15px;
+            margin-top: 20px;
+            font-size: 0.8rem;
+            border-radius: 50px;
+            font-family: 'Varela', sans-serif;
+            border-radius: 50px;
+            align-items: center;
+            justify-content: space-between;
+            text-decoration: none;
+        }
+
+        .histoire:hover {
+            background-color: #45668f;
+            transition: .4s linear;
+        }
+
+        .dropdown2 {
+            position: absolute;
+            display: inline-block;
+            left: 690px;
+        }
+
+        .dropdown-child2 {
+            display: none;
+            background-color: #99b5cbe3;
+            min-width: 50px;
+            border-radius: 20px;
+            margin-top: 9px;
+        }
+
+        .dropdown-child2 a {
+            color: white;
+            padding: 20px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown2:hover .dropdown-child2 {
+            display: block;
+        }
+
+        .test2:hover {
+            display: block;
+            color: #45668f9d;
+            transition: .4s linear;
+        }
+
+        .pc {
+            background-color: #99b5cb;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 15px;
+            margin-top: 20px;
+            font-size: 0.8rem;
+            border-radius: 50px;
+            font-family: 'Varela', sans-serif;
+            border-radius: 50px;
+            align-items: center;
+            justify-content: space-between;
+            text-decoration: none;
+        }
+
+        .pc:hover {
+            background-color: #45668f;
+            transition: .4s linear;
+        }
+
+        .dropdown3 {
+            position: absolute;
+            display: inline-block;
+            left: 780px;
+        }
+
+        .dropdown-child3 {
+            display: none;
+            background-color: #99b5cbe3;
+            min-width: 50px;
+            border-radius: 20px;
+            margin-top: 9px;
+        }
+
+        .dropdown-child3 a {
+            color: white;
+            padding: 20px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown3:hover .dropdown-child3 {
+            display: block;
+        }
+
+        .test3:hover {
+            display: block;
+            color: #45668f9d;
+            transition: .4s linear;
+        }
+
+        .avatar {
+            background-repeat: repeat;
+            min-width: 100%;
+            min-height: 100%;
+            padding: 0;
+            overflow: hidden;
+            border: 0px;
+            background-size: cover;
+            line-height: 99%;
+        }
+
+        .btn {
+            height: 70px;
+            width: 70px;
+            background: linear-gradient(to top, #ff4e50, #f9d423);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            cursor: pointer;
+            z-index: 3;
+
+        }
+
+        .btn:hover {
+            background: linear-gradient(to top, #ff4e51c4, #f9d523c0);
+            transition: .4s linear;
+        }
+
+        .icone {
+            width: 50px;
+        }
+
+        .container-first {
+            position: absolute;
+            top: 80px;
+            left: 5%;
+
+        }
+
+        h1 {
+            text-transform: uppercase;
+            font-size: 60px;
+            color: #f1f1f1;
+            position: absolute;
+            left: 280px;
+        }
+
+        h1 span {
+            position: relative;
+            left: 300px;
+        }
+
+        .epin {
+            height: 60px;
+            margin-top: 5px;
+            margin-left: 5px;
+            opacity: 100%;
+        }
+
+        .az {
+            margin-left: 15px;
+            color: #f1f1f1;
+        }
+
+        /* Works on Firefox */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #99b5cb;
+            background: transparent;
+        }
+
+        /* Works on Chrome, Edge, and Safari */
+        *::-webkit-scrollbar {
+            width: 10px;
+            background: linear-gradient(#2b1055, #7597de)
+        }
+
+        *::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background-color: #99b5cb;
+            border-radius: 20px;
+            border: 1px solid white;
+        }
+
+        *::-webkit-scrollbar-thumb:hover {
+            background-color: #99b5cb9a;
+            transition: .4s linear;
+        }
+
+        .Intro {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            background: #2a105581;
+            display: flex;
+            justify-content: center;
+            padding: 70px;
+            position: absolute;
+            left: 100px;
+            top: 350px;
+            width: 500px;
+            border-radius: 25px;
+        }
+
+        .lignes {
+            position: absolute;
+            top: 6%;
+            left: 50px;
+        }
+
+        .l1 {
+            width: 1380px;
+            height: 3px;
+            background: #f1f1f1;
+            border-radius: 5px;
+            position: relative;
+            top: 250px;
+        }
+
+        .cl {
+            height: 280px;
+            position: absolute;
+            right: 100px;
+            top: 369px;
+            border-radius: 25px;
+        }
+
+        .lc {
+            height: 280px;
+            position: absolute;
+            right: 390px;
+            top: 369px;
+            border-radius: 25px;
+        }
+
+        .lcc {
+            height: 200px;
+            position: absolute;
+            left: 100px;
+            top: 740px;
+            border-radius: 35px;
+        }
+
+        .Spoutnik1 {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 360px;
+            left: 350px;
+            z-index: 2;
+        }
+
+        .SPT2 {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            background: #2a105581;
+            display: flex;
+            justify-content: center;
+            padding: 70px;
+            position: absolute;
+            top: 650px;
+            right: 100px;
+            width: 500px;
+            border-radius: 25px;
+        }
+
+        .Spoutnik2 {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 660px;
+            right: 355px;
+            z-index: 2;
+        }
+
+        .lccc {
+            height: 380px;
+            position: absolute;
+            left: 475px;
+            top: 662px;
+            border-radius: 35px;
+        }
+
+        .Lulu1 {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            background: #2a105581;
+            display: flex;
+            justify-content: center;
+            padding: 70px;
+            position: absolute;
+            top: 1050px;
+            left: 100px;
+            width: 500px;
+            border-radius: 25px;
+        }
+
+        .Luna1 {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 1060px;
+            left: 355px;
+            z-index: 2;
+        }
+
+        .llc {
+            height: 345px;
+            position: absolute;
+            right: 100px;
+            top: 1069px;
+            border-radius: 25px;
+        }
+
+        .llcc {
+            height: 345px;
+            position: absolute;
+            right: 500px;
+            top: 1069px;
+            border-radius: 25px;
+        }
+
+        .Lulu2 {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            background: #2a105581;
+            display: flex;
+            justify-content: center;
+            padding: 70px;
+            position: absolute;
+            top: 1420px;
+            right: 100px;
+            width: 500px;
+            border-radius: 25px;
+        }
+
+        .Luna2 {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 1430px;
+            right: 350px;
+            z-index: 2;
+        }
+
+        .luc {
+            height: 150px;
+            position: absolute;
+            left: 100px;
+            top: 1460px;
+            border-radius: 25px;
+        }
+
+        .lucc {
+            height: 150px;
+            position: absolute;
+            left: 465px;
+            top: 1460px;
+            border-radius: 25px;
+        }
+
+        .Spoutnik5 {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 1700px;
+            left: 355px;
+            z-index: 2;
+        }
+
+        .SP5 {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            background: #2a105581;
+            display: flex;
+            justify-content: center;
+            padding: 70px;
+            position: absolute;
+            top: 1690px;
+            left: 100px;
+            width: 500px;
+            border-radius: 25px;
+        }
+
+        .ffp {
+            height: 195px;
+            position: absolute;
+            right: 100px;
+            top: 1710px;
+            border-radius: 25px;
+        }
+
+        .ffpp {
+            height: 195px;
+            position: absolute;
+            right: 435px;
+            top: 1710px;
+            border-radius: 25px;
+        }
+
+        .VD {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            background: #2a105581;
+            display: flex;
+            justify-content: center;
+            padding: 70px;
+            position: absolute;
+            top: 1950px;
+            right: 100px;
+            width: 500px;
+            border-radius: 25px;
+        }
+
+        .VDT {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 1960px;
+            right: 350px;
+            z-index: 2;
+        }
+
+        .rd {
+            height: 225px;
+            position: absolute;
+            left: 100px;
+            top: 1975px;
+            border-radius: 25px;
+        }
+
+        .rdd {
+            height: 225px;
+            position: absolute;
+            left: 585px;
+            top: 1975px;
+            border-radius: 25px;
+        }
+
+        .rddd {
+            height: 225px;
+            position: absolute;
+            left: 330px;
+            top: 1975px;
+            border-radius: 25px;
+        }
+
+        .CLL {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            background: #2a105581;
+            display: flex;
+            justify-content: center;
+            padding: 70px;
+            position: absolute;
+            top: 2250px;
+            left: 100px;
+            width: 500px;
+            border-radius: 25px;
+        }
+
+        .CCDT {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 2260px;
+            left: 350px;
+            z-index: 2;
+        }
+
+        .CCF {
+            height: 223px;
+            position: absolute;
+            left: 750px;
+            top: 2265px;
+            border-radius: 25px;
+        }
+        .CCDF {
+            height: 223px;
+            position: absolute;
+            right: 100px;
+            top: 2265px;
+            border-radius: 25px;
+        }
+
+        .RRDS {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            background: #2a105581;
+            display: flex;
+            justify-content: center;
+            padding: 70px;
+            position: absolute;
+            top: 2550px;
+            right: 100px;
+            width: 500px;
+            border-radius: 25px;
+        }
+        .RRD {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 2560px;
+            right: 370px;
+            z-index: 2;
+        }
+        .ZR {
+            height: 265px;
+            position: absolute;
+            left: 520px;
+            top: 2565px;
+            border-radius: 25px;
+        }
+        .ZRI {
+            height: 230px;
+            position: absolute;
+            left: 100px;
+            top: 2580px;
+            border-radius: 25px;
+        }
+    </style>
+
+</head>
+
+
+<!-- HTML -->
+
+
+<html>
+
+
+<body>
+    <!-- TO TOP -->
+    <div class="btn">
+        <img src="https://cdn.discordapp.com/attachments/932313275079745556/954734111782752256/1647696583257.png"
+            class="icone">
+    </div>
+    <!-- FIN TO TOP -->
+
+    <!-- HEADER -->
+    <header id="navbar" class="nav">
+        <img class="epin"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPZhjlABrxS7TgQKtx-1iOFv7D705ltn0vCw&usqp=CAU">
+        <h2 class="az">EPI</h2>
+
+        <div class="dropdown">
+            <a class="boutonmenuprincipal" href="EPI.html">Accueil</a>
+
+        </div>
+
+        <div class="dropdown2">
+            <button class="histoire">Histoire</button>
+            <div class="dropdown-child2">
+                <a class="test2" href="Histoire.html">Introduction</a>
+                <a class="test2" href="USA.html">USA</a>
+                <a class="test2" href="URSS.html">URSS</a>
+            </div>
+
+        </div>
+
+        <div class="dropdown3">
+            <button class="pc">Physique/Chimie</button>
+            <div class="dropdown-child3">
+                <a class="test3" href="PC.html">Introduction</a>
+                <a class="test3" href="PC2.html">Moteur-Fusée à Ergol Liquide</a>
+                <a class="test3" href="PC3.html"> Moteur-Fusée à Propergol Solide</a>
+                <a class="test3" href="PC4.html">Différences entre les deux Moteurs-Fusées</a>
+            </div>
+
+        </div>
+    </header>
+    <!-- FIN HEADER -->
+    <div class="container-first">
+        <h1><span>URSS</span></h1>
+    </div>
+    <div class="lignes">
+        <div class="l1"></div>
+    </div>
+    <div class="ddl">
+        <div>
+            <h2 class="Spoutnik1">Spoutnik 1</h2><br>
+            <p class="Intro">
+                La course à l’espace débute lorsque l’URSS envoie le premier satellite artificiel le 4 octobre 1957 :
+                Spoutnik 1, lancé avec un missile balistique. Ce satellite est une sphère métallique de taille réduite
+                de 58 cm de diamètre. Ce satellite est capable d'indiquer la pression et la température. Il a été
+                propulsé par le moteur R.D.-107 qui fonctionne avec du propergol liquide. Il a été mis au point par
+                Valentin Petrovitch Glouchko.
+            </p>
+        </div>
+        <img class="cl"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Sputnik1_schema.jpg/220px-Sputnik1_schema.jpg">
+        <img class="lc" src="https://www.reflexions.uliege.be/upload/docs/image/jpeg/2007-09/spoutnik.jpg">
+        <div>
+            <h2 class="Spoutnik2">Spoutnik 2</h2><br>
+            <p class="SPT2">
+                L’URSS va alors enchaîner avec Spoutnik 2 qui a lui aussi été propulsé avec le moteur R.D.-107. L’URSS
+                va envoyer le premier animal terrien dans l’espace qui est une chienne : LaÏka. En voyant que les Etats
+                Unis ne réagissent pas, ces événements vont faire naître énormément de rumeurs et remettre en cause la
+                supériorité technologique des USA. Malheureusement la chienne est morte en 2002 7 ou 8 h après le
+                décollage de la fusée suite à un problème de régulation de la température et du stress. Les médias
+                n’étaient pas au courant et les responsables de l’opération déclarent que la chienne est morte suite à
+                l’ingestion de pilules empoisonnées sur terre pour lui éviter de souffrir.
+
+
+            </p>
+        </div>
+        <img class="lcc"
+            src="https://i.f1g.fr/media/figaro/805x453_crop/2017/11/02/XVM842e08e4-bfda-11e7-85cf-f210e42b9fc0.jpg">
+        <img class="lccc" src="https://live.staticflickr.com/4065/4358585535_9291335965_w.jpg">
+        <div>
+            <h2 class="Luna1">Luna 1</h2><br>
+            <p class="Lulu1">
+                Suite à la réussite des missions Spoutniks, les soviétiques vont lancer une nouvelle série de mission
+                visant la lune : les missions “Luna”. Luna 1 est la première fusée mise à feu alors qu’elle est déjà
+                placée en orbite. Celle-ci sera aussi propulsée par les moteurs-fusées à propergols liquides R.D.-107
+                C’est également le premier satellite à atteindre la vitesse de libération (la vitesse théorique
+                nécessaire pour s’échapper indéfiniment de l'attraction gravitationnelle d’une planète) et est le
+                premier satellite à détecter des vents solaires. De plus, Luna 1 est le premier objet spatial à être
+                placé en orbite héliocentrique.
+
+            </p>
+        </div>
+        <img class="llc" src="https://pic.clubic.com/v1/images/1799595/raw">
+        <img class="llcc" src="https://space.skyrocket.de/img_sat/luna_e1__1.jpg">
+        <div>
+            <h2 class="Luna2">Luna 2 et 3</h2><br>
+            <p class="Lulu2">
+                En 1959 les soviétiques envoient le premier objet à atteindre un autre corps céleste avec Luna 2. Luna 3
+                est le premier vol à prendre une photo de la face cachée de la Lune.
+                Ces deux satellites ont été propulsés avec les moteurs fusées RD-107.
+
+
+
+            </p>
+        </div>
+        <img class="luc"
+            src="https://i0.wp.com/reves-d-espace.com/wp-content/uploads/2019/09/luna2-1.jpg?fit=600%2C284&ssl=1">
+        <img class="lucc"
+            src="https://upload.wikimedia.org/wikipedia/commons/8/86/Luna-3_%28Memorial_Museum_of_Astronautics%29.JPG">
+        <div>
+            <h2 class="Spoutnik5">Spoutnik 5</h2><br>
+            <p class="SP5">
+                En 1960 ils vont être les premiers à faire revenir des êtres vivants animaux et végétaux depuis un
+                séjour dans l’espace avec la mission Spoutnik 5, qui utilise le moteur-fusée R.D.-107.
+
+
+            </p>
+        </div>
+        <img class="ffp" src="https://upload.wikimedia.org/wikipedia/commons/4/43/USSR_stamp_1_ruble_Belka-Strelka.PNG">
+        <img class="ffpp"
+            src="data:image/jpeg;base64,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">
+        <h2 class="VDT">Venera 1</h2><br>
+        <p class="VD">
+            L’URSS va envoyer la première sonde à effectuer une correction de trajectoire interplanétaire durant la
+            mission Venera 1, utilisant une fusée se propulsant avec des moteurs-fusées R.D.-107, en 1961. C’est une
+            étape très importante pour l’exploration spatiale au-delà du système solaire.
+
+
+        </p>
+        <h2 class="CCDT">Vostok 1</h2><br>
+        <p class="CLL">
+            L’URSS va marquer l’histoire de l'astronautique en envoyant le premier homme dans l’espace, c’est Youri
+            Gagarine pendant le vol Vostok 1, qui utilise le lanceur Molnia, composé du moteur R.D.-107.
+
+        </p>
+        <img class="rd" src="https://fr-academic.com/pictures/frwiki/86/Venera_1_spacecraft.jpg">
+        <img class="rddd" src="https://space.skyrocket.de/img_sat/venera-1__1.jpg">
+        <img class="rdd"
+            src="https://upload.wikimedia.org/wikipedia/commons/5/50/Venera_1_%28a%29_%28Memorial_Museum_of_Astronautics%29.JPG">
+        <img class="CCF"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Vostok_spacecraft.jpg/800px-Vostok_spacecraft.jpg">
+        <img class="CCDF"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Molniya_launch_vehicle_-_panoramio.jpg/420px-Molniya_launch_vehicle_-_panoramio.jpg">
+        
+        <h2 class="RRD">Vostok 6</h2><br>
+        <p class="RRDS">
+            Ils enverront ensuite en 1963 la première femme dans l’espace : Valentina Tereshkova avec la mission Vostok
+            6. Pour finir ils seront les premiers à avoir un équipage comportant plus d’un membre et les premiers à
+            effectuer des sorties extravéhiculaire. Ils créeront en 1966 la première version des lanceurs soyouz encore
+            utilisés de nos jours.
+
+        </p>
+        <img class="ZR" src="https://space-badges.pagesperso-orange.fr/cosmos/w6crew.jpg">
+        <img class="ZRI" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Vostok_6_capsule_on_display%2C_2016.jpg/1200px-Vostok_6_capsule_on_display%2C_2016.jpg">
+    </div>
+
+    <!-- SCRIPT -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+
+    <script>
+        const navigation = document.querySelector('header');
+
+        window.addEventListener('scroll', () => {
+
+            if (window.scrollY > 200) {
+                navigation.classList.add('anim-header');
+            } else {
+                navigation.classList.remove('anim-header');
+            }
+
+        })
+
+        const titreSpans = document.querySelectorAll('h1 span');
+
+        window.addEventListener('load', () => {
+
+            const TL = gsap.timeline({ paused: true });
+
+            TL
+                .staggerFrom(titreSpans, 1, { top: -50, opacity: 0, ease: "power2.out" }, 0.3)
+
+
+            TL.play();
+        })
+        const btn = document.querySelector('.btn');
+
+        btn.addEventListener('click', () => {
+
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: "smooth"
+            })
+
+        })
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        }
+        const l1 = document.querySelector('.l1');
+        window.addEventListener('load', () => {
+
+            const TL = gsap.timeline({ paused: true });
+            TL
+                .from(l1, 1, { width: 0, ease: "power2.out" }, '-=2')
+            TL.play();
+        })
+    </script>
+
+    <!-- FIN SCRIPT -->
+
+</body>
+
+
+</html>

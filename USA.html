@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Varela&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Varela', sans-serif;
+            overflow-x: hidden;
+        }
+
+        footer {
+            background-color: #333333;
+            color: white;
+            padding: 0 20px;
+            position: relative;
+            overflow: unset;
+        }
+
+        header {
+            min-width: 100%;
+            min-height: 10%;
+            background: transparent;
+            position: fixed;
+            transition: all 0.3s ease-out;
+            display: flex;
+            z-index: 5;
+        }
+
+
+        .ddl {
+            margin: 0;
+            padding: 1500px;
+            background: linear-gradient(#7597de, #2b1055)
+        }
+
+
+
+        .btn:hover {
+            background-color: #45668f;
+            transition: .4s linear;
+        }
+
+
+        .item {
+            margin: 0 10px;
+            font-size: 22px;
+        }
+
+        .clickAnim {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(to top, #ff4e50, #f9d423);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            position: absolute;
+            z-index: 9000;
+            transform: scale(0);
+            transform-origin: center;
+            animation: clickAnim 1s ease-in-out;
+        }
+
+        .anim-header {
+            background: #172230;
+            color: #45668f;
+        }
+
+        @keyframes clickAnim {
+            0% {
+                transform: scale(0);
+            }
+
+            50% {
+                transform: scale(2);
+                opacity: 1;
+            }
+
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+        }
+
+        .boutonmenuprincipal {
+            background-color: #99b5cb;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 15px;
+            margin-top: 20px;
+            font-size: 0.8rem;
+            border-radius: 50px;
+            font-family: 'Varela', sans-serif;
+            border-radius: 50px;
+            align-items: center;
+            justify-content: space-between;
+            text-decoration: none;
+        }
+
+        .boutonmenuprincipal:hover {
+            background-color: #3c689e;
+            transition: .4s linear;
+        }
+
+        .dropdown {
+            position: absolute;
+            display: inline-block;
+            left: 600px;
+            top: 27px;
+        }
+
+        .dropdown-child {
+            display: none;
+            background-color: #99b5cbe3;
+            min-width: 50px;
+            border-radius: 20px;
+            margin-top: 9px;
+        }
+
+        .dropdown-child a {
+            color: white;
+            padding: 20px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-child {
+            display: block;
+        }
+
+        .test1:hover {
+            display: block;
+            color: #45668f9d;
+            transition: .4s linear;
+        }
+
+        .histoire {
+            background-color: #99b5cb;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 15px;
+            margin-top: 20px;
+            font-size: 0.8rem;
+            border-radius: 50px;
+            font-family: 'Varela', sans-serif;
+            border-radius: 50px;
+            align-items: center;
+            justify-content: space-between;
+            text-decoration: none;
+        }
+
+        .histoire:hover {
+            background-color: #45668f;
+            transition: .4s linear;
+        }
+
+        .dropdown2 {
+            position: absolute;
+            display: inline-block;
+            left: 690px;
+        }
+
+        .dropdown-child2 {
+            display: none;
+            background-color: #99b5cbe3;
+            min-width: 50px;
+            border-radius: 20px;
+            margin-top: 9px;
+        }
+
+        .dropdown-child2 a {
+            color: white;
+            padding: 20px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown2:hover .dropdown-child2 {
+            display: block;
+        }
+
+        .test2:hover {
+            display: block;
+            color: #45668f9d;
+            transition: .4s linear;
+        }
+
+        .pc {
+            background-color: #99b5cb;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 15px;
+            margin-top: 20px;
+            font-size: 0.8rem;
+            border-radius: 50px;
+            font-family: 'Varela', sans-serif;
+            border-radius: 50px;
+            align-items: center;
+            justify-content: space-between;
+            text-decoration: none;
+        }
+
+        .pc:hover {
+            background-color: #45668f;
+            transition: .4s linear;
+        }
+
+        .dropdown3 {
+            position: absolute;
+            display: inline-block;
+            left: 780px;
+        }
+
+        .dropdown-child3 {
+            display: none;
+            background-color: #99b5cbe3;
+            min-width: 50px;
+            border-radius: 20px;
+            margin-top: 9px;
+        }
+
+        .dropdown-child3 a {
+            color: white;
+            padding: 20px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown3:hover .dropdown-child3 {
+            display: block;
+        }
+
+        .test3:hover {
+            display: block;
+            color: #45668f9d;
+            transition: .4s linear;
+        }
+
+        .avatar {
+            background-repeat: repeat;
+            min-width: 100%;
+            min-height: 100%;
+            padding: 0;
+            overflow: hidden;
+            border: 0px;
+            background-size: cover;
+            line-height: 99%;
+        }
+
+        .btn {
+            height: 70px;
+            width: 70px;
+            background: linear-gradient(to top, #ff4e50, #f9d423);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            cursor: pointer;
+            z-index: 3;
+
+        }
+
+        .btn:hover {
+            background: linear-gradient(to top, #ff4e51c4, #f9d523c0);
+            transition: .4s linear;
+        }
+
+        .icone {
+            width: 50px;
+        }
+
+        .container-first {
+            position: absolute;
+            top: 80px;
+            left: 5%;
+
+        }
+
+        h1 {
+            text-transform: uppercase;
+            font-size: 60px;
+            color: #f1f1f1;
+            position: absolute;
+            left: 310px;
+        }
+
+        h1 span {
+            position: relative;
+            left: 300px;
+        }
+
+        .epin {
+            height: 60px;
+            margin-top: 5px;
+            margin-left: 5px;
+            opacity: 100%;
+        }
+
+        .az {
+            margin-left: 15px;
+            color: #f1f1f1;
+        }
+
+        /* Works on Firefox */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #99b5cb;
+            background: transparent;
+        }
+
+        /* Works on Chrome, Edge, and Safari */
+        *::-webkit-scrollbar {
+            width: 10px;
+            background: linear-gradient(#2b1055, #7597de)
+        }
+
+        *::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background-color: #99b5cb;
+            border-radius: 20px;
+            border: 1px solid white;
+        }
+
+        *::-webkit-scrollbar-thumb:hover {
+            background-color: #99b5cb9a;
+            transition: .4s linear;
+        }
+
+        .Intro {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            background: #2a105581;
+            display: flex;
+            justify-content: center;
+            padding: 70px;
+            position: absolute;
+            left: 100px;
+            top: 350px;
+            width: 500px;
+            border-radius: 25px;
+        }
+
+        .lignes {
+            position: absolute;
+            top: 6%;
+            left: 50px;
+        }
+
+        .l1 {
+            width: 1380px;
+            height: 3px;
+            background: #f1f1f1;
+            border-radius: 5px;
+            position: relative;
+            top: 250px;
+        }
+
+        .cl {
+            height: 230px;
+            position: absolute;
+            right: 100px;
+            top: 369px;
+            border-radius: 25px;
+        }
+
+        .ldc {
+            height: 230px;
+            position: absolute;
+            right: 100px;
+            top: 369px;
+            border-radius: 25px;
+        }
+
+        .lc {
+            height: 230px;
+            position: absolute;
+            right: 490px;
+            top: 369px;
+            border-radius: 25px;
+        }
+
+        .lcc {
+            height: 200px;
+            position: absolute;
+            left: 100px;
+            top: 660px;
+            border-radius: 35px;
+        }
+
+        .Spoutnik1 {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 360px;
+            left: 350px;
+            z-index: 2;
+        }
+
+        .SPT2 {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            background: #2a105581;
+            display: flex;
+            justify-content: center;
+            padding: 70px;
+            position: absolute;
+            top: 650px;
+            right: 100px;
+            width: 500px;
+            border-radius: 25px;
+        }
+
+        .Spoutnik2 {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 660px;
+            right: 355px;
+            z-index: 2;
+        }
+
+        .lccc {
+            height: 210px;
+            position: absolute;
+            left: 575px;
+            top: 660px;
+            border-radius: 35px;
+        }
+
+        .lcccc {
+            height: 210px;
+            position: absolute;
+            left: 280px;
+            top: 660px;
+            border-radius: 35px;
+        }
+
+        .Lulu1 {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            background: #2a105581;
+            display: flex;
+            justify-content: center;
+            padding: 70px;
+            position: absolute;
+            top: 900px;
+            left: 100px;
+            width: 500px;
+            border-radius: 25px;
+        }
+
+        .Luna1 {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 910px;
+            left: 360px;
+            z-index: 2;
+        }
+
+        .llc {
+            height: 185px;
+            position: absolute;
+            right: 100px;
+            top: 915px;
+            border-radius: 25px;
+        }
+
+        .llcc {
+            height: 185px;
+            position: absolute;
+            right: 455px;
+            top: 915px;
+            border-radius: 25px;
+        }
+
+        .hor {
+            height: 185px;
+            position: absolute;
+            right: 246px;
+            top: 915px;
+            border-radius: 25px
+        }
+
+        .Lulu2 {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            background: #2a105581;
+            display: flex;
+            justify-content: center;
+            padding: 70px;
+            position: absolute;
+            top: 1160px;
+            right: 100px;
+            width: 500px;
+            border-radius: 25px;
+        }
+
+        .Luna2 {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 1170px;
+            right: 350px;
+            z-index: 2;
+        }
+
+        .luc {
+            height: 200px;
+            position: absolute;
+            left: 100px;
+            top: 1180px;
+            border-radius: 25px;
+        }
+
+        .lufc {
+            height: 200px;
+            position: absolute;
+            left: 240px;
+            top: 1180px;
+            border-radius: 25px;
+        }
+
+        .lucc {
+            height: 200px;
+            position: absolute;
+            left: 405px;
+            top: 1180px;
+            border-radius: 25px;
+        }
+
+        .Spoutnik5 {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 1410px;
+            left: 355px;
+            z-index: 2;
+        }
+
+        .SP5 {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            background: #2a105581;
+            display: flex;
+            justify-content: center;
+            padding: 70px;
+            position: absolute;
+            top: 1400px;
+            left: 100px;
+            width: 500px;
+            border-radius: 25px;
+        }
+
+        .ffp {
+            height: 218px;
+            position: absolute;
+            right: 100px;
+            top: 1420px;
+            border-radius: 25px;
+        }
+
+        .ffpp {
+            height: 218px;
+            position: absolute;
+            right: 460px;
+            top: 1420px;
+            border-radius: 25px;
+        }
+
+        .ffpd {
+            height: 218px;
+            position: absolute;
+            right: 305px;
+            top: 1420px;
+            border-radius: 25px;
+        }
+
+        .VD {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            background: #2a105581;
+            display: flex;
+            justify-content: center;
+            padding: 70px;
+            position: absolute;
+            top: 1650px;
+            right: 100px;
+            width: 500px;
+            border-radius: 25px;
+        }
+
+        .VDT {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 1660px;
+            right: 350px;
+            z-index: 2;
+        }
+
+        .rd {
+            height: 200px;
+            position: absolute;
+            left: 100px;
+            top: 1660px;
+            border-radius: 25px;
+        }
+
+        .rdd {
+            height: 200px;
+            position: absolute;
+            left: 585px;
+            top: 1660px;
+            border-radius: 25px;
+        }
+
+        .rddd {
+            height: 200px;
+            position: absolute;
+            left: 330px;
+            top: 1660px;
+            border-radius: 25px;
+        }
+
+        .CLL {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            background: #2a105581;
+            display: flex;
+            justify-content: center;
+            padding: 70px;
+            position: absolute;
+            top: 1900px;
+            left: 100px;
+            width: 500px;
+            border-radius: 25px;
+        }
+
+        .CCDT {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 1910px;
+            left: 310px;
+            z-index: 2;
+        }
+
+        .CCF {
+            height: 223px;
+            position: absolute;
+            left: 750px;
+            top: 1920px;
+            border-radius: 25px;
+        }
+
+        .CCDF {
+            height: 223px;
+            position: absolute;
+            right: 100px;
+            top: 1920px;
+            border-radius: 25px;
+        }
+
+        .RRDS {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            background: #2a105581;
+            display: flex;
+            justify-content: center;
+            padding: 70px;
+            position: absolute;
+            top: 2200px;
+            right: 100px;
+            width: 500px;
+            border-radius: 25px;
+        }
+
+        .RRD {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 2210px;
+            right: 370px;
+            z-index: 2;
+        }
+
+        .ZR {
+            height: 225px;
+            position: absolute;
+            left: 400px;
+            top: 2215px;
+            border-radius: 25px;
+        }
+
+        .ZRI {
+            height: 230px;
+            position: absolute;
+            left: 100px;
+            top: 2215px;
+            border-radius: 25px;
+        }
+
+        .glv {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            background: #2a105581;
+            display: flex;
+            justify-content: center;
+            padding: 70px;
+            position: absolute;
+            top: 2500px;
+            left: 100px;
+            width: 500px;
+            border-radius: 25px;
+        }
+
+        .gl {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 2510px;
+            left: 370px;
+            z-index: 2;
+        }
+
+        .GM {
+            height: 200px;
+            position: absolute;
+            right: 410px;
+            top: 2535px;
+            border-radius: 25px;
+        }
+
+        .GMK {
+            height: 200px;
+            position: absolute;
+            right: 100px;
+            top: 2535px;
+            border-radius: 25px;
+        }
+
+        .rp {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            background: #2a105581;
+            display: flex;
+            justify-content: center;
+            padding: 70px;
+            position: absolute;
+            top: 2800px;
+            right: 100px;
+            width: 500px;
+            border-radius: 25px;
+        }
+
+        .rpq {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 2810px;
+            right: 290px;
+            z-index: 2;
+        }
+
+        .ZQ {
+            height: 220px;
+            position: absolute;
+            left: 100px;
+            top: 2820px;
+            border-radius: 25px;
+        }
+
+        .ZQD {
+            height: 220px;
+            position: absolute;
+            left: 500px;
+            top: 2820px;
+            border-radius: 25px;
+        }
+
+        .fin {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            background: #2a105581;
+            display: flex;
+            justify-content: center;
+            padding: 70px;
+            position: absolute;
+            top: 3100px;
+            left: 100px;
+            width: 500px;
+            border-radius: 25px;
+        }
+
+        .fi {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 3110px;
+            left: 320px;
+            z-index: 2;
+        }
+        .FQ {
+            height: 150px;
+            position: absolute;
+            right: 100px;
+            top: 3150px;
+            border-radius: 25px;
+        }
+    </style>
+
+</head>
+
+
+<!-- HTML -->
+
+
+<html>
+
+
+<body>
+    <!-- TO TOP -->
+    <div class="btn">
+        <img src="https://cdn.discordapp.com/attachments/932313275079745556/954734111782752256/1647696583257.png"
+            class="icone">
+    </div>
+    <!-- FIN TO TOP -->
+
+    <!-- HEADER -->
+    <header id="navbar" class="nav">
+        <img class="epin"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPZhjlABrxS7TgQKtx-1iOFv7D705ltn0vCw&usqp=CAU">
+        <h2 class="az">EPI</h2>
+
+        <div class="dropdown">
+            <a class="boutonmenuprincipal" href="EPI.html">Accueil</a>
+
+        </div>
+
+        <div class="dropdown2">
+            <button class="histoire">Histoire</button>
+            <div class="dropdown-child2">
+                <a class="test2" href="Histoire.html">Introduction</a>
+                <a class="test2" href="USA.html">USA</a>
+                <a class="test2" href="URSS.html">URSS</a>
+            </div>
+
+        </div>
+
+        <div class="dropdown3">
+            <button class="pc">Physique/Chimie</button>
+            <div class="dropdown-child3">
+                <a class="test3" href="PC.html">Introduction</a>
+                <a class="test3" href="PC2.html">Moteur-Fusée à Ergol Liquide</a>
+                <a class="test3" href="PC3.html"> Moteur-Fusée à Propergol Solide</a>
+                <a class="test3" href="PC4.html">Différences entre les deux Moteurs-Fusées</a>
+            </div>
+
+        </div>
+    </header>
+    <!-- FIN HEADER -->
+    <div class="container-first">
+        <h1><span>USA</span></h1>
+    </div>
+    <div class="lignes">
+        <div class="l1"></div>
+    </div>
+    <div class="ddl">
+        <div>
+            <h2 class="Spoutnik1">Explorer 1</h2><br>
+            <p class="Intro">
+                Face à l'URSS, les États-Unis ripostent, à partir du 31 janvier 1958. C’est la découverte de la ceinture
+                de Van Allen, avec l’Explorer 1 qui utilise les moteurs-fusées NAA Rocketdyne 75-110 A-7.
+            </p>
+        </div>
+        <img class="cl"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Launch_of_Jupiter_C_with_Explorer_1.jpg/220px-Launch_of_Jupiter_C_with_Explorer_1.jpg">
+        <img class="lc"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Redstone_engine_on_stand_test.tif/lossy-page1-2791px-Redstone_engine_on_stand_test.tif.jpg">
+        <img class="ldc" src="https://fr-academic.com/pictures/frwiki/69/Explorer1.jpg">
+        <div>
+            <h2 class="Spoutnik2">Projet SCORE</h2><br>
+            <p class="SPT2">
+                Le premier satellite de télécommunication, le 18 décembre 1958, nommé le Projet SCORE et ayant un moteur
+                XLR-89-5 à ergols liquides est envoyé dans l'Espace.
+            </p>
+        </div>
+        <img class="lcc" src="http://www.astronautix.com/nails/b/b2ma1ma2.jpg
+            ">
+        <img class="lccc"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Atlas-B_with_Score_payload.jpg/800px-Atlas-B_with_Score_payload.jpg">
+        <img class="lcccc"
+            src="https://alchetron.com/cdn/score-satellite-ce6b685e-24b7-4735-90d5-3359ff1143d-resize-750.jpeg">
+        <div>
+            <h2 class="Luna1">Vanguard 2</h2><br>
+            <p class="Lulu1">
+                Ensuite, le 17 février 1959, le premier satellite météorologique, le Vanguard 2, ayant un moteur X-405 à
+                ergols liquides, est lancé.
+            </p>
+        </div>
+        <img class="llc" src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Vanguard_rocket.jpg">
+        <img class="llcc" src="https://upload.wikimedia.org/wikipedia/commons/3/35/Vanguard2.jpg">
+        <img class="hor"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Vanguard_2_satellite_sketch.jpg/290px-Vanguard_2_satellite_sketch.jpg">
+        <div>
+            <h2 class="Luna2">Explorer 6</h2><br>
+            <p class="Lulu2">
+                La même année, le 7 août, la première photo de la Terre depuis l’espace est prise par l'Explorer 6 qui
+                possède un moteur Rocketdyne LR-79-7 à ergols liquides.
+            </p>
+        </div>
+        <img class="luc" src="http://www.astronautix.com/graphics/m/mb1mb3.jpg">
+        <img class="lufc"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Thor-Able_III_Explorer_6.jpg/220px-Thor-Able_III_Explorer_6.jpg">
+        <img class="lucc"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Explorer_6_paddles_up.jpg/290px-Explorer_6_paddles_up.jpg">
+        <div>
+            <h2 class="Spoutnik5">Mariner 2</h2><br>
+            <p class="SP5">
+                Ils lanceront ensuite le Mariner 2 qui va survoler pour la première fois Vénus, le 14 décembre 1962. Il
+                fonctionne avec le moteur LR-89-5.
+
+            </p>
+        </div>
+        <img class="ffp" src="http://www.astronautix.com/nails/m/ma3rdyne.jpg">
+        <img class="ffpp"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mariner_2.jpg/290px-Mariner_2.jpg">
+        <img class="ffpd"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Mariner_2_launch.jpg/220px-Mariner_2_launch.jpg">
+        <h2 class="VDT">Mariner 4</h2><br>
+        <p class="VD">
+            Le 14 juillet 1965, le Mariner 4 à moteur LR-105-5 à ergols liquides survole Mars. moteur LR-105-5
+
+
+        </p>
+        <h2 class="CCDT">Gemini 8 et Agena</h2><br>
+        <p class="CLL">
+            Le premier amarrage en orbite entre deux vaisseaux spatiaux est réalisé le 16 mars 1966, entre Gemini 8 et
+            Agena. Cependant c'est un échec à cause de problèmes techniques, Armstrong a dû faire revenir la fusée sur
+            Terre.
+
+        </p>
+        <img class="rd" src="https://www.planete-mars.com/wp-content/uploads/2014/11/mariner_4a-lancement.jpg">
+        <img class="rddd"
+            src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Mariner-4-1304_1964novembemariner4-cropped.jpg">
+        <img class="CCF"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Profile_of_Agena_Docking_Target_-_GPN-2000-001345.jpg/640px-Profile_of_Agena_Docking_Target_-_GPN-2000-001345.jpg">
+        <img class="CCDF"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Molniya_launch_vehicle_-_panoramio.jpg/420px-Molniya_launch_vehicle_-_panoramio.jpg">
+
+        <h2 class="RRD">Apollo 8</h2><br>
+        <p class="RRDS">
+            Le premier homme à orbiter autour d'un autre corps céleste, la Lune, est dans Apollo 8, une fusée dont le
+            moteur est un F-1 au kérosène et LOX et un J-2 à hydrogène liquide et LOX (ergols liquides). Cette prouesse
+            est réalisée le 21 décembre 1968.
+
+
+        </p>
+        <img class="ZR" src="http://www.astronautix.com/graphics/f/f1.jpg">
+        <img class="ZRI"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Apollo_8_liftoff.jpg/220px-Apollo_8_liftoff.jpg">
+        <h2 class="gl">Apollo 11</h2><br>
+        <p class="glv">
+            Le 21 juillet 1969 le plus grand exploit des États Unis est réalisé. En effet, un homme est envoyé sur la
+            Lune et en revient vivant. La fusée n'était autre que Apollo 11, qui possédait un moteur F-1 au kérosène et
+            LOX, et un J-2 à hydrogène liquide et LOX ce sont des ergols liquides.
+
+
+
+        </p>
+        <img class="GM"
+            src="https://branchez-vous.com/wp-content/uploads/2019/07/Capture-d%E2%80%99e%CC%81cran-le-2019-07-16-a%CC%80-09.46.52.png">
+        <img class="GMK"
+            src="https://parismatch.be/app/uploads/2019/01/2019-01-29-14_05_39-Konbini-France-all-pop-everything-1100x715.jpg">
+        <h2 class="rpq">Pioneer 10 et Mariner 10</h2><br>
+        <p class="rp">
+            Par la suite, le 3 décembre 1973, les USA vont envoyer le Pioneer 10 à moteur LR-105-5 à ergols liquides,
+            qui va être le premier survol de Jupiter.
+            Ils enchaînent alors le 29 mars 1974 avec le lancement du Mariner 10 dont le moteur est un LR-105-5 à ergols
+            liquides. Il est donc le premier survol de Mercure.
+
+
+
+
+        </p>
+        <img class="ZQ" src="https://upload.wikimedia.org/wikipedia/commons/6/60/Mariner10.gif">
+        <img class="ZQD"
+            src="https://cdn.futura-sciences.com/buildsv6/images/largeoriginal/8/c/c/8ccfcda6ce_50000659_pioneer-10.jpg">
+        <h2 class="fi">Apollo-Soyouz</h2><br>
+        <p class="fin">
+            La course à l’espace se conclura en 1975 avec la mission apollo-soyouz, mission mixte avec 3 américains et 2
+            soviétique, après cela les missions dans l'espace ont continué mais en coopération et avec d’autres
+            puissances comme la Chine où l’Europe
+        </p>
+        <img class="FQP" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Portrait_of_ASTP_crews.jpg/250px-Portrait_of_ASTP_crews.jpg">
+        <img class="FQ"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Apollo-soyuz.jpg/780px-Apollo-soyuz.jpg">
+    </div>
+
+    <!-- SCRIPT -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+
+    <script>
+        const navigation = document.querySelector('header');
+
+        window.addEventListener('scroll', () => {
+
+            if (window.scrollY > 200) {
+                navigation.classList.add('anim-header');
+            } else {
+                navigation.classList.remove('anim-header');
+            }
+
+        })
+
+        const titreSpans = document.querySelectorAll('h1 span');
+
+        window.addEventListener('load', () => {
+
+            const TL = gsap.timeline({ paused: true });
+
+            TL
+                .staggerFrom(titreSpans, 1, { top: -50, opacity: 0, ease: "power2.out" }, 0.3)
+
+
+            TL.play();
+        })
+        const btn = document.querySelector('.btn');
+
+        btn.addEventListener('click', () => {
+
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: "smooth"
+            })
+
+        })
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        }
+        const l1 = document.querySelector('.l1');
+        window.addEventListener('load', () => {
+
+            const TL = gsap.timeline({ paused: true });
+            TL
+                .from(l1, 1, { width: 0, ease: "power2.out" }, '-=2')
+            TL.play();
+        })
+    </script>
+
+    <!-- FIN SCRIPT -->
+
+</body>
+
+
+</html>

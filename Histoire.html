@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Varela&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Varela', sans-serif;
+            overflow-x: hidden;
+        }
+
+        footer {
+            background-color: #333333;
+            color: white;
+            padding: 0 20px;
+            position: relative;
+            overflow: unset;
+        }
+
+        header {
+            min-width: 100%;
+            min-height: 10%;
+            background: transparent;
+            position: fixed;
+            transition: all 0.3s ease-out;
+            display: flex;
+            z-index: 2;
+        }
+
+
+        .ddl {
+            margin: 0;
+            padding: 700px;
+            background: linear-gradient(#7597de, #2b1055)
+        }
+
+
+
+        .btn:hover {
+            background-color: #45668f;
+            transition: .4s linear;
+        }
+
+
+        .item {
+            margin: 0 10px;
+            font-size: 22px;
+        }
+
+        .clickAnim {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(to top, #ff4e50, #f9d423);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            position: absolute;
+            z-index: 9000;
+            transform: scale(0);
+            transform-origin: center;
+            animation: clickAnim 1s ease-in-out;
+        }
+
+        .anim-header {
+            background: #172230;
+            color: #45668f;
+        }
+
+        @keyframes clickAnim {
+            0% {
+                transform: scale(0);
+            }
+
+            50% {
+                transform: scale(2);
+                opacity: 1;
+            }
+
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+        }
+
+        .boutonmenuprincipal {
+            background-color: #99b5cb;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 15px;
+            margin-top: 20px;
+            font-size: 0.8rem;
+            border-radius: 50px;
+            font-family: 'Varela', sans-serif;
+            border-radius: 50px;
+            align-items: center;
+            justify-content: space-between;
+            text-decoration: none;
+        }
+
+        .boutonmenuprincipal:hover {
+            background-color: #3c689e;
+            transition: .4s linear;
+        }
+
+        .dropdown {
+            position: absolute;
+            display: inline-block;
+            left: 600px;
+            top: 27px;
+        }
+
+        .dropdown-child {
+            display: none;
+            background-color: #99b5cbe3;
+            min-width: 50px;
+            border-radius: 20px;
+            margin-top: 9px;
+        }
+
+        .dropdown-child a {
+            color: white;
+            padding: 20px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-child {
+            display: block;
+        }
+
+        .test1:hover {
+            display: block;
+            color: #45668f9d;
+            transition: .4s linear;
+        }
+
+        .histoire {
+            background-color: #99b5cb;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 15px;
+            margin-top: 20px;
+            font-size: 0.8rem;
+            border-radius: 50px;
+            font-family: 'Varela', sans-serif;
+            border-radius: 50px;
+            align-items: center;
+            justify-content: space-between;
+            text-decoration: none;
+        }
+
+        .histoire:hover {
+            background-color: #45668f;
+            transition: .4s linear;
+        }
+
+        .dropdown2 {
+            position: absolute;
+            display: inline-block;
+            left: 690px;
+        }
+
+        .dropdown-child2 {
+            display: none;
+            background-color: #99b5cbe3;
+            min-width: 50px;
+            border-radius: 20px;
+            margin-top: 9px;
+        }
+
+        .dropdown-child2 a {
+            color: white;
+            padding: 20px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown2:hover .dropdown-child2 {
+            display: block;
+        }
+
+        .test2:hover {
+            display: block;
+            color: #45668f9d;
+            transition: .4s linear;
+        }
+
+        .pc {
+            background-color: #99b5cb;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 15px;
+            margin-top: 20px;
+            font-size: 0.8rem;
+            border-radius: 50px;
+            font-family: 'Varela', sans-serif;
+            border-radius: 50px;
+            align-items: center;
+            justify-content: space-between;
+            text-decoration: none;
+        }
+
+        .pc:hover {
+            background-color: #45668f;
+            transition: .4s linear;
+        }
+
+        .dropdown3 {
+            position: absolute;
+            display: inline-block;
+            left: 780px;
+        }
+
+        .dropdown-child3 {
+            display: none;
+            background-color: #99b5cbe3;
+            min-width: 50px;
+            border-radius: 20px;
+            margin-top: 9px;
+        }
+
+        .dropdown-child3 a {
+            color: white;
+            padding: 20px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown3:hover .dropdown-child3 {
+            display: block;
+        }
+
+        .test3:hover {
+            display: block;
+            color: #45668f9d;
+            transition: .4s linear;
+        }
+
+        .avatar {
+            background-repeat: repeat;
+            min-width: 100%;
+            min-height: 100%;
+            padding: 0;
+            overflow: hidden;
+            border: 0px;
+            background-size: cover;
+            line-height: 99%;
+        }
+
+        .btn {
+            height: 70px;
+            width: 70px;
+            background: linear-gradient(to top, #ff4e50, #f9d423);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            cursor: pointer;
+
+        }
+
+        .btn:hover {
+            background: linear-gradient(to top, #ff4e51c4, #f9d523c0);
+            transition: .4s linear;
+        }
+
+        .icone {
+            width: 50px;
+        }
+
+        .container-first {
+            position: absolute;
+            top: 80px;
+            left: 5%;
+
+        }
+
+        h1 {
+            text-transform: uppercase;
+            font-size: 60px;
+            color: #f1f1f1;
+            position: absolute;
+            left: 140px;
+        }
+
+        h1 span {
+            position: relative;
+            left: 300px;
+        }
+
+        .epin {
+            height: 60px;
+            margin-top: 5px;
+            margin-left: 5px;
+            opacity: 100%;
+        }
+
+        .az {
+            margin-left: 15px;
+            color: #f1f1f1;
+        }
+
+        /* Works on Firefox */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #99b5cb;
+            background: transparent;
+        }
+
+        /* Works on Chrome, Edge, and Safari */
+        *::-webkit-scrollbar {
+            width: 10px;
+            background: linear-gradient(#2b1055, #7597de)
+        }
+
+        *::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background-color: #99b5cb;
+            border-radius: 20px;
+            border: 1px solid white;
+        }
+
+        *::-webkit-scrollbar-thumb:hover {
+            background-color: #99b5cb9a;
+            transition: .4s linear;
+        }
+
+        .Intro {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            background: #2a105581;
+            display: flex;
+            justify-content: center;
+            padding: 70px;
+            position: absolute;
+            left: 100px;
+            top: 350px;
+            right: 200px;
+            width: 500px;
+            border-radius: 25px;
+        }
+
+        .lignes {
+            position: absolute;
+            top: 6%;
+            left: 50px;
+        }
+
+        .l1 {
+            width: 1380px;
+            height: 3px;
+            background: #f1f1f1;
+            border-radius: 5px;
+            position: relative;
+            top: 250px;
+        }
+
+        .cl {
+            height: 150px;
+            position: absolute;
+            right: 100px;
+            top: 370px;
+            border-radius: 25px;
+        }
+
+        .lc {
+            height: 150px;
+            position: absolute;
+            right: 430px;
+            top: 370px;
+            border-radius: 25px;
+        }
+
+        .lcc {
+            height: 150px;
+            position: absolute;
+            right: 315px;
+            top: 540px;
+            border-radius: 35px;
+        }
+
+        .Course {
+            font-size: 0, 8rem;
+            color: #f1f1f1;
+            text-align: justify;
+            background: #2a105581;
+            display: flex;
+            justify-content: center;
+            padding: 70px;
+            position: absolute;
+            right: 100px;
+            width: 500px;
+            border-radius: 25px;
+            top: 750px;
+        }
+        .lccc {
+            height: 250px;
+            position: absolute;
+            left: 100px;
+            top: 820px;
+            border-radius: 35px;
+        }
+    </style>
+
+</head>
+
+
+<!-- HTML -->
+
+
+<html>
+
+
+<body>
+    <!-- TO TOP -->
+    <div class="btn">
+        <img src="https://cdn.discordapp.com/attachments/932313275079745556/954734111782752256/1647696583257.png"
+            class="icone">
+    </div>
+    <!-- FIN TO TOP -->
+
+    <!-- HEADER -->
+    <header id="navbar" class="nav">
+        <img class="epin"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPZhjlABrxS7TgQKtx-1iOFv7D705ltn0vCw&usqp=CAU">
+        <h2 class="az">EPI</h2>
+
+        <div class="dropdown">
+            <a class="boutonmenuprincipal" href="EPI.html">Accueil</a>
+
+        </div>
+
+        <div class="dropdown2">
+            <button class="histoire">Histoire</button>
+            <div class="dropdown-child2">
+                <a class="test2" href="Histoire.html">Introduction</a>
+                <a class="test2" href="USA.html">USA</a>
+                <a class="test2" href="URSS.html">URSS</a>
+            </div>
+
+        </div>
+
+        <div class="dropdown3">
+            <button class="pc">Physique/Chimie</button>
+            <div class="dropdown-child3">
+                <a class="test3" href="PC.html">Introduction</a>
+                <a class="test3" href="PC2.html">Moteur-Fusée à Ergol Liquide</a>
+                <a class="test3" href="PC3.html"> Moteur-Fusée à Propergol Solide</a>
+                <a class="test3" href="PC4.html">Différences entre les deux Moteurs-Fusées</a>
+            </div>
+
+        </div>
+    </header>
+    <!-- FIN HEADER -->
+    <div class="container-first">
+        <h1><span>INTRODUCTION </span></h1>
+    </div>
+    <div class="lignes">
+        <div class="l1"></div>
+    </div>
+    <div class="ddl">
+        <div>
+            <p class="Intro">
+                Après la Seconde Guerre Mondiale, le monde se sépare en deux camps :
+                <br>- Le camp Soviétique, qui supporte un régime communiste basé sur le partage équitable de toutes les
+                ressources,<br>
+                <br>- Le camp de l’Otan, une alliance militaire entre plusieurs Etats, qui soutient un régime
+                capitaliste et
+                libéraliste basé sur l’individualisme et la liberté des entreprises.
+                <br>Chaque camp est soutenu par des États puissants, les Etats Unis soutiennent le Capitalisme et l’URSS
+                soutient le Communisme.
+
+
+            </p>
+        </div>
+        <img class="cl"
+            src="https://www.superprof.fr/ressources/wp-content/uploads/2010/11/l-urss-staline-1200x600.png">
+        <img class="lc"
+            src="data:image/png;base64,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">
+        <img class="lcc"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Flag_of_NATO.svg/1200px-Flag_of_NATO.svg.png">
+        <p class="Course">
+            Nonobstant, ces deux nations ne souhaitent pas créer une guerre nucléaire. Ils ne s’affrontent jamais
+            directement mais au travers de plusieurs conflits. Ces deux puissances organisent une “course à l’espace”
+            qui consiste à réaliser des exploits spatiaux tel qu’envoyer le premier homme dans l’espace ou encore, sur
+            la Lune. C’est ainsi que ces deux grandes nations vont développer une invention qui va révolutionner le
+            monde : les moteurs-fusées.
+            En conclusion, la course à l’espace est une compétition que mènent les Etats Unis et l’URSS dans le cadre de
+            la guerre froide. Les deux pays se battent également pour montrer que leur idéologie est la meilleure.
+
+        </p>
+        <img class="lccc" src="https://fr-academic.com/pictures/frwiki/83/Space_race1.jpg">
+    </div>
+
+    <!-- SCRIPT -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+
+    <script>
+        const navigation = document.querySelector('header');
+
+        window.addEventListener('scroll', () => {
+
+            if (window.scrollY > 200) {
+                navigation.classList.add('anim-header');
+            } else {
+                navigation.classList.remove('anim-header');
+            }
+
+        })
+
+        const titreSpans = document.querySelectorAll('h1 span');
+
+        window.addEventListener('load', () => {
+
+            const TL = gsap.timeline({ paused: true });
+
+            TL
+                .staggerFrom(titreSpans, 1, { top: -50, opacity: 0, ease: "power2.out" }, 0.3)
+
+
+            TL.play();
+        })
+        const btn = document.querySelector('.btn');
+
+        btn.addEventListener('click', () => {
+
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: "smooth"
+            })
+
+        })
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        }
+        const l1 = document.querySelector('.l1');
+        window.addEventListener('load', () => {
+
+            const TL = gsap.timeline({ paused: true });
+            TL
+                .from(l1, 1, { width: 0, ease: "power2.out" }, '-=2')
+            TL.play();
+        })
+    </script>
+
+    <!-- FIN SCRIPT -->
+
+</body>
+
+
+</html>

@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Varela&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Varela', sans-serif;
+      overflow-x: hidden;
+    }
+
+    footer {
+      background: #172230;
+      color: #45668f;
+      overflow: unset;
+      padding: 30px;
+    }
+
+    header {
+      min-width: 100%;
+      min-height: 10%;
+      background: transparent;
+      position: fixed;
+      transition: all 0.3s ease-out;
+      display: flex;
+      z-index: 4;
+    }
+
+    section {
+      padding: 425px;
+      background: linear-gradient(#7597de, #2b1055)
+    }
+
+    .btn:hover {
+      background-color: #45668f;
+      transition: .4s linear;
+    }
+
+    .item {
+      margin: 0 10px;
+      font-size: 22px;
+    }
+
+    .clickAnim {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: linear-gradient(to top, #ff4e50, #f9d423);
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      position: absolute;
+      z-index: 9000;
+      transform: scale(0);
+      transform-origin: center;
+      animation: clickAnim 1s ease-in-out;
+    }
+
+    .anim-header {
+      background: #172230;
+      color: #45668f;
+    }
+
+    @keyframes clickAnim {
+      0% {
+        transform: scale(0);
+      }
+
+      50% {
+        transform: scale(2);
+        opacity: 1;
+      }
+
+      0% {
+        transform: scale(0);
+        opacity: 0;
+      }
+    }
+
+    .boutonmenuprincipal {
+      background-color: #99b5cb;
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 10px 15px;
+      margin-top: 20px;
+      font-size: 0.8rem;
+      border-radius: 50px;
+      font-family: 'Varela', sans-serif;
+      border-radius: 50px;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+    }
+
+    .boutonmenuprincipal:hover {
+      background-color: #3c689e;
+      transition: .4s linear;
+    }
+
+    .dropdown {
+      position: absolute;
+      display: inline-block;
+      left: 600px;
+      top: 27px;
+    }
+
+    .dropdown-child {
+      display: none;
+      background-color: #99b5cbe3;
+      min-width: 50px;
+      border-radius: 20px;
+      margin-top: 9px;
+    }
+
+    .dropdown-child a {
+      color: white;
+      padding: 20px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown:hover .dropdown-child {
+      display: block;
+    }
+
+    .test1:hover {
+      display: block;
+      color: #45668f9d;
+      transition: .4s linear;
+    }
+
+    .histoire {
+      background-color: #99b5cb;
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 10px 15px;
+      margin-top: 20px;
+      font-size: 0.8rem;
+      border-radius: 50px;
+      font-family: 'Varela', sans-serif;
+      border-radius: 50px;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+    }
+
+    .histoire:hover {
+      background-color: #45668f;
+      transition: .4s linear;
+    }
+
+    .dropdown2 {
+      position: absolute;
+      display: inline-block;
+      left: 690px;
+    }
+
+    .dropdown-child2 {
+      display: none;
+      background-color: #99b5cbe3;
+      min-width: 50px;
+      border-radius: 20px;
+      margin-top: 9px;
+    }
+
+    .dropdown-child2 a {
+      color: white;
+      padding: 20px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown2:hover .dropdown-child2 {
+      display: block;
+    }
+
+    .test2:hover {
+      display: block;
+      color: #45668f9d;
+      transition: .4s linear;
+    }
+
+    .pc {
+      background-color: #99b5cb;
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 10px 15px;
+      margin-top: 20px;
+      font-size: 0.8rem;
+      border-radius: 50px;
+      font-family: 'Varela', sans-serif;
+      border-radius: 50px;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+    }
+
+    .pc:hover {
+      background-color: #45668f;
+      transition: .4s linear;
+    }
+
+    .dropdown3 {
+      position: absolute;
+      display: inline-block;
+      left: 780px;
+    }
+
+    .dropdown-child3 {
+      display: none;
+      background-color: #99b5cbe3;
+      min-width: 50px;
+      border-radius: 20px;
+      margin-top: 9px;
+    }
+
+    .dropdown-child3 a {
+      color: white;
+      padding: 20px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown3:hover .dropdown-child3 {
+      display: block;
+    }
+
+    .test3:hover {
+      display: block;
+      color: #45668f9d;
+      transition: .4s linear;
+    }
+
+    .avatar {
+      background-repeat: repeat;
+      min-width: 100%;
+      min-height: 100%;
+      padding: 0;
+      overflow: hidden;
+      border: 0px;
+      background-size: cover;
+      line-height: 99%;
+    }
+
+    .btn {
+      height: 70px;
+      width: 70px;
+      background: linear-gradient(to top, #ff4e50, #f9d423);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      cursor: pointer;
+      z-index: 3;
+    }
+
+    .btn:hover {
+      background: linear-gradient(to top, #ff4e51c4, #f9d523c0);
+      transition: .4s linear;
+    }
+
+    .icone {
+      width: 50px;
+    }
+
+    .container-first {
+      position: absolute;
+      top: 30%;
+      left: 5%;
+    }
+
+    h1 {
+      text-transform: uppercase;
+      font-size: 100px;
+      color: #f1f1f1;
+      position: relative;
+    }
+
+    h1 span {
+      position: relative;
+      left: 540px;
+    }
+
+    .cl {
+      background-image: url('https://cdn.futura-sciences.com/buildsv6/images/wide1920/8/5/8/8581fe6c57_50185486_anemie-spatiale.jpg');
+      background-repeat: no-repeat;
+      height: 1050px
+    }
+
+    .epin {
+      height: 60px;
+      margin-top: 5px;
+      margin-left: 5px;
+      opacity: 100%;
+    }
+
+    .az {
+      margin-left: 15px;
+      color: #f1f1f1;
+    }
+
+    /* Works on Firefox */
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: #99b5cb;
+      background: transparent;
+    }
+
+    /* Works on Chrome, Edge, and Safari */
+    *::-webkit-scrollbar {
+      width: 10px;
+      background: linear-gradient(#2b1055, #7597de)
+    }
+
+    *::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    *::-webkit-scrollbar-thumb {
+      background-color: #99b5cb;
+      border-radius: 20px;
+      border: 1px solid white;
+    }
+
+    *::-webkit-scrollbar-thumb:hover {
+      background-color: #99b5cb9a;
+      transition: .4s linear;
+    }
+
+    .cardBox1 {
+      float: left;
+      font-size: 1.2em;
+      position: absolute;
+      perspective: 800px;
+      transition: all 0.4s ease 0s;
+      width: 20%;
+      margin-top: -130px;
+      margin-bottom: 257px;
+      margin-left: -350px;
+      z-index: 2;
+    }
+
+    .cardBox2 {
+      float: left;
+      font-size: 1.2em;
+      position: absolute;
+      perspective: 800px;
+      transition: all 0.4s ease 0s;
+      width: 20%;
+      margin-top: -130px;
+      margin-bottom: 257px;
+      margin-left: -5px;
+      z-index: 2;
+    }
+
+    .cardBox3 {
+      float: left;
+      font-size: 1.2em;
+      position: absolute;
+      perspective: 800px;
+      transition: all 0.4s ease 0s;
+      width: 20%;
+      margin-top: -130px;
+      margin-bottom: 257px;
+      margin-left: 340px;
+      z-index: 2;
+    }
+
+    .cardBox4 {
+      float: left;
+      font-size: 1.2em;
+      position: absolute;
+      perspective: 800px;
+      transition: all 0.4s ease 0s;
+      width: 20%;
+      margin-top: -130px;
+      margin-bottom: 257px;
+      margin-left: 685px;
+      z-index: 2;
+    }
+
+    .cardBox1:hover .card {
+      transform: rotateY(180deg);
+    }
+
+    .cardBox2:hover .card {
+      transform: rotateY(180deg);
+    }
+
+    .cardBox3:hover .card {
+      transform: rotateY(180deg);
+    }
+
+    .cardBox4:hover .card {
+      transform: rotateY(180deg);
+    }
+
+    .card {
+      background: #7597de;
+      cursor: pointer;
+      height: 250px;
+      transform-style: preserve-3d;
+      transition: transform 0.5s ease 0s;
+      width: 100%;
+    }
+
+    .card p {
+      margin-bottom: 1.8em;
+    }
+
+    .card .front,
+    .card .back {
+      backface-visibility: hidden;
+      box-sizing: border-box;
+      color: white;
+      display: block;
+      font-size: 1.2em;
+      height: 100%;
+      padding: 0.8em 0.7em;
+      position: absolute;
+      text-align: center;
+      width: 100%;
+    }
+
+    .card .front strong {
+      background: #fff;
+      border-radius: 100%;
+      color: #222;
+      font-size: 1.5em;
+      line-height: 30px;
+      padding: 0 7px 4px 6px;
+    }
+
+    .card .back {
+      transform: rotateY(180deg);
+    }
+
+    .card .back a {
+      padding: 0.3em 0.5em;
+      background: #333;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 1px;
+      font-size: 0.9em;
+      transition: all 0.2s ease 0s;
+    }
+
+    .card .back a:hover {
+      background: #fff;
+      color: #333;
+      text-shadow: 0 0 1px #333;
+    }
+
+    .cardBox1:nth-child(1) .card .back {
+      background: #2b1055;
+    }
+
+    .cardBox2:nth-child(2) .card .back {
+      background: #2b1055;
+    }
+
+    .cardBox3:nth-child(3) .card .back {
+      background: #2b1055;
+    }
+
+    .cardBox4:nth-child(4) .card .back {
+      background: #2b1055;
+    }
+
+    .cardBox1:nth-child(1) .card {
+      -webkit-animation: giro 1.5s 1;
+      animation: giro 1.5s 1;
+    }
+
+    .cardBox2:nth-child(2) .card {
+      -webkit-animation: giro 1.5s 1;
+      animation: giro 1.5s 1;
+    }
+
+    .cardBox3:nth-child(3) .card {
+      -webkit-animation: giro 2s 1;
+      animation: giro 2s 1;
+    }
+
+    .cardBox4:nth-child(4) .card {
+      -webkit-animation: giro 2.5s 1;
+      animation: giro 2.5s 1;
+    }
+
+    @-webkit-keyframes giro {
+      from {
+        transform: rotateY(180deg);
+      }
+
+      to {
+        transform: rotateY(0deg);
+      }
+    }
+
+    @keyframes giro {
+      from {
+        transform: rotateY(180deg);
+      }
+
+      to {
+        transform: rotateY(0deg);
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+
+      .cardBox1,
+      .cardBox2,
+      .cardBox3,
+      .cardBox4 {
+        margin-left: 2.8%;
+        margin-top: 3%;
+        width: 46%;
+      }
+
+      .card {
+        height: 285px;
+      }
+
+      .cardBox1:last-child {
+        margin-bottom: 3%;
+      }
+
+      .cardBox2:last-child {
+        margin-bottom: 3%;
+      }
+
+      .cardBox3:last-child {
+        margin-bottom: 3%;
+      }
+
+      .cardBox4:last-child {
+        margin-bottom: 3%;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .cardBox1 {
+        width: 94.5%;
+      }
+
+      .cardBox2 {
+        width: 94.5%;
+      }
+
+      .cardBox3 {
+        width: 94.5%;
+      }
+
+      .cardBox4 {
+        width: 94.5%;
+      }
+
+      .card {
+        height: 260px;
+      }
+    }
+
+    .ryry {
+      height: 60px;
+      margin: 60px;
+    }
+
+    .sasha {
+      height: 60px;
+      margin: 60px;
+    }
+
+    .sacha {
+      height: 60px;
+      margin: 60px;
+    }
+
+    .jules {
+      height: 60px;
+      margin: 60px;
+    }
+    .sources {
+      background-color: #99b5cb;
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 10px 15px;
+      margin-top: 20px;
+      font-size: 0.8rem;
+      border-radius: 50px;
+      font-family: 'Varela', sans-serif;
+      border-radius: 50px;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+      margin-left: 675px;
+      margin-bottom: 20px;
+    }
+    .sources:hover {
+      background-color: #45668f;
+      transition: .4s linear;
+    }
+  </style>
+
+</head>
+
+
+<!-- HTML -->
+
+
+<html>
+
+
+<body>
+  <!-- TO TOP -->
+  <div class="btn">
+    <img src="https://cdn.discordapp.com/attachments/932313275079745556/954734111782752256/1647696583257.png"
+      class="icone">
+  </div>
+  <!-- FIN TO TOP -->
+
+  <!-- HEADER -->
+  <header id="navbar" class="nav">
+
+    <img class="epin"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPZhjlABrxS7TgQKtx-1iOFv7D705ltn0vCw&usqp=CAU">
+    <h2 class="az">EPI</h2>
+
+    <div class="dropdown">
+      <a class="boutonmenuprincipal" href="EPI.html">Accueil</a>
+
+    </div>
+
+    <div class="dropdown2">
+      <button class="histoire">Histoire</button>
+      <div class="dropdown-child2">
+        <a class="test2" href="Histoire.html">Introduction</a>
+        <a class="test2" href="USA.html">USA</a>
+        <a class="test2" href="URSS.html">URSS</a>
+      </div>
+
+    </div>
+
+    <div class="dropdown3">
+      <button class="pc">Physique/Chimie</button>
+      <div class="dropdown-child3">
+        <a class="test3" href="PC.html">Introduction</a>
+        <a class="test3" href="PC2.html">Moteur-Fusée à Ergol Liquide</a>
+        <a class="test3" href="PC3.html"> Moteur-Fusée à Propergol Solide</a>
+        <a class="test3" href="PC4.html">Différences entre les deux Moteurs-Fusées</a>
+      </div>
+
+    </div>
+
+  </header>
+  <!-- FIN HEADER -->
+
+  <div class="cl"></div>
+
+
+  <div class="container-first">
+    <h1><span>LES FUSEES : </span><br><span>LA COMBUSTION</span></h1>
+  </div>
+  <section>
+    <div class="boxesContainer">
+      <div class="cardBox1">
+        <div class="card">
+          <div class="front">
+            <h3 class="ryry">Rymène Khaldi</h3>
+          </div>
+          <div class="back">
+            <h3>Tâches</h3>
+            <p>
+              - Developpement du site <br>
+              - Physique / Chimie
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="cardBox2">
+        <div class="card">
+          <div class="front">
+            <h3 class="sasha">Sasha Bui </h3>
+          </div>
+          <div class="back">
+            <h3>Tâches</h3>
+            <p>
+              - Physique / Chimie <br>
+              - Grammaire
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="cardBox3">
+        <div class="card">
+          <div class="front">
+            <h3 class="jules">Jules Roy </h3>
+          </div>
+          <div class="back">
+            <h3>Tâches</h3>
+            <p>
+              - Histoire / Géographie <br>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="cardBox4">
+        <div class="card">
+          <div class="front">
+            <h3 class="sacha">Sacha Le Treut </h3>
+          </div>
+          <div class="back">
+            <h3>Tâches</h3>
+            <p>
+              - Histoire / Géographie <br>
+              - Physique / Chimie
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<footer>
+  <div class="blablou">
+    <a class="sources" href="sources.html">Sources</a>
+  </div>
+
+</footer>
+
+  <!-- SCRIPT -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+
+  <script>
+    const navigation = document.querySelector('header');
+
+    window.addEventListener('scroll', () => {
+
+      if (window.scrollY > 930) {
+        navigation.classList.add('anim-header');
+      } else {
+        navigation.classList.remove('anim-header');
+      }
+
+    })
+
+    const titreSpans = document.querySelectorAll('h1 span');
+
+    window.addEventListener('load', () => {
+
+      const TL = gsap.timeline({ paused: true });
+
+      TL
+        .staggerFrom(titreSpans, 1, { top: -50, opacity: 0, ease: "power2.out" }, 0.3)
+
+
+      TL.play();
+    })
+    const btn = document.querySelector('.btn');
+
+    btn.addEventListener('click', () => {
+
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth"
+      })
+
+    })
+    window.onbeforeunload = function () {
+      window.scrollTo(0, 0);
+    }
+  </script>
+
+  <!-- FIN SCRIPT -->
+
+</body>
+
+
+</html>
